@@ -1,5 +1,8 @@
 venv/
 app/__pycache__
 .env
-models
+models/vosk-model-en-in-0.5
+models/zips
+models/Hey-Teddy_en_linux_v3_0_0.ppn
+models/vosk-model-small-en-us-0.15
 service
