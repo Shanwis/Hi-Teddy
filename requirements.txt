@@ -1,4 +1,0 @@
-vosk
-pyaudioa
-pvporcupine
-python-dotenv

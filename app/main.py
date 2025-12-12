@@ -1,16 +1,20 @@
 from config import BUFFER_SIZE
 from recognizer import recognizer, stream, porcupine
 from commands import commands
+from nlu import detect_intent
+from tts import speak
 import json
 import struct
 
-print("Teddy activated.....")
+print("Teddy is running now.....")
+speak("Hello, for my assistance just say the magic phrase")
 
 while True:
     frame = stream.read(porcupine.frame_length, exception_on_overflow=False)
     pcm = struct.unpack_from("h" * porcupine.frame_length, frame)
 
     if porcupine.process(pcm) >= 0:
+        speak("Yes?")
         print("Teddy is listening.....")
 
         while True:
@@ -20,11 +24,15 @@ while True:
                 result = json.loads(recognizer.Result())
                 command = result["text"].strip().lower()
 
-                print("Command:",command)
+                print("Command:",command)        
+                intent = detect_intent(command)
 
-                if(command in commands.keys()):
-                    commands[command]()
-                    print("Executed:",command)
+                if(intent in commands.keys()):
+                    speak(f"Executing {intent.replace('_',' ')}")
+                    commands[intent]()
                     break
-                elif(command == 'cancel'):
+                elif(intent == 'cancel'):
+                    speak("Ok, cancelled.")
                     break
+                else:
+                    speak("Listening.")
