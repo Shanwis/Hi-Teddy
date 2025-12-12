@@ -13,6 +13,7 @@ commands = {
 
     "open_terminal":lambda:os.system("gnome-terminal"),
     "open_browser":lambda: os.system("brave-browser"),
+    "open_editor":lambda: os.system("code"),
     "close_window":lambda: os.system("wmctrl -c :ACTIVE:"),
 
     "mute_speaker":lambda: os.system("pactl set-sink-mute @DEFAULT_SINK@ true"),

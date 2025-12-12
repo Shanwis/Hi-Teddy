@@ -6,6 +6,7 @@ INTENTS = {
 
     "open_terminal": ["open terminal", "launch terminal"],
     "open_browser":["open browser", "launch browser"],
+    "open_editor":["open editor", "launch editor"],
     "close_window":["close window","stop window"],
 
     "mute_speaker":["mute speaker"],
