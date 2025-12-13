@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Hey-Teddy Voice Assistant
+Comment=You buddy for system level voice assistance
+Exec=bash -c $PWD/venv/bin/python3 $PWD/app/main.py
+Path=$PWD
+Terminal=false
+Categories=Utility
+Icon=/home/shanwis/Data/PROJECTS/Hey-Teddy/assets/logo.png
+SingleMainWindow=true

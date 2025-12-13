@@ -2,10 +2,12 @@ from config import BUFFER_SIZE
 from recognizer import recognizer, stream, porcupine
 from commands import commands
 from nlu import detect_intent
+from single_instance import set_instance,cleanup
 from tts import speak
 import json
 import struct
 
+set_instance()
 print("Teddy is running now.....")
 speak("Hello, for my assistance just say the magic phrase")
 

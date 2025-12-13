@@ -1,9 +1,14 @@
 import os
+import sys
 from tts import speak
 
 def battery():
     percent = open("/sys/class/power_supply/BAT0/capacity").read().strip()
     speak(f"battery level is {percent}%")
+
+def stop_assistant():
+    speak("Ok, see you later!")
+    sys.exit(0)
 
 commands = {
     "shutdown":lambda:os.system("shutdown now"),
@@ -30,5 +35,7 @@ commands = {
     "bluetooth_on":lambda:os.system("bluetoothctl power on"),
     "bluetooth_off":lambda:os.system("bluetoothctl power off"),
     
-    "battery_status":battery
+    "battery_status":battery,
+
+    "stop_assistant":stop_assistant,
 }

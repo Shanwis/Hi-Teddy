@@ -7,6 +7,9 @@
 ![System Control](https://img.shields.io/badge/System-Automation-red?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
+<p align="center">
+  <img src="assets/logo.png" width="180" style="border-radius: 20px;">
+</p>
 
 This is a project attempting to make an offline voice assistant using the vosk library for voice-to-text parsing. I want to have an extensive selection of commands which can be executed through voice.
 
@@ -68,16 +71,19 @@ Hey-Teddy/
 │   ├── nlu.py
 │   ├── recognizer.py
 │   └── tts.py
+├── assets
+│   └── logo.png
 ├── Requirements
 │   ├── linux_requirements.txt
 │   └── requirements_python.txt
+├── Hey-Teddy.desktop
 ├── .gitignore
 ├── LICENSE
 └── README.md
 
 ```
 
-## Installation
+## Using Hey-Teddy
 1. Clone the repo
 
 ```bash
@@ -103,6 +109,29 @@ vosk-model-small-en-us-0.15
 ```bash
 python app/main.py
 ```
+
+### Installation as a desktop app
+
+I have added a desktop launcher so that it can be run as a regular application
+
+1. Make the .desktop file executable
+
+```bash
+chmod +x Hey-Teddy.desktop
+```
+
+2. Install to system applications menu
+```bash
+cp Hey-Teddy.desktop ~/.local/share/applications/
+```
+
+3. Update the desktop to see it quick
+
+```bash
+update-desktop-database ~/.local/share/applications/
+```
+
+Now we can see it as an app.
 
 ## Why Teddy?
 

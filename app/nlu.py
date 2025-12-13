@@ -25,7 +25,8 @@ INTENTS = {
 
     "battery_status":["battery level","power level", "battery"],
 
-    "cancel": ["cancel", "stop", "nevermind"]
+    "cancel": ["cancel", "nevermind"],
+    "stop_assistant": ["stop","stop assistant"]
 }
 
 def detect_intent(text):
